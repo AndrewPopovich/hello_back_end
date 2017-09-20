@@ -3,9 +3,9 @@ sudo: false
 
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-  - psql -c 'CREATE SEQUENCE contacts_id_seq;' -U postgres
-  - psql -c 'CREATE TABLE contacts (id smallint NOT NULL DEFAULT nextval('contacts_id_seq'),name CHAR(50));' -U postgres
-  - psql -c 'ALTER SEQUENCE contacts_id_seq OWNED BY contacts.id;' -U postgres
+  - psql -c 'CREATE SEQUENCE contacts_id_seq;
+            CREATE TABLE contacts (id smallint NOT NULL DEFAULT nextval('contacts_id_seq'),name CHAR(50));
+            ALTER SEQUENCE contacts_id_seq OWNED BY contacts.id;' -U postgres
 
 test:
   adapter: postgresql
