@@ -1,0 +1,14 @@
+language: java
+sudo: false
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create table contacts (id int primary key, name char(50));' -U postgres
+
+test:
+  adapter: postgresql
+  database: travis_ci_test
+
+install: true
+
+script: mvn test -B verify

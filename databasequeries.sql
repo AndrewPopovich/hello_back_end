@@ -1,7 +1,6 @@
 CREATE TABLE contacts (
-  id IDENTITY,
-  name VARCHAR(50),
-  CONSTRAINT contacts_id PRIMARY KEY (id)
+  id INT PRIMARY KEY,
+  name CHAR(50),
 );
 
 INSERT INTO contacts (name) VALUES ('Andrew');
