@@ -1,7 +1,9 @@
+CREATE SEQUENCE contacts_id_seq;
 CREATE TABLE contacts (
-  id INT PRIMARY KEY,
-  name CHAR(50),
+    id smallint NOT NULL DEFAULT nextval('contacts_id_seq'),
+    name CHAR(50)
 );
+ALTER SEQUENCE contacts_id_seq OWNED BY contacts.id;
 
 INSERT INTO contacts (name) VALUES ('Andrew');
 INSERT INTO contacts (name) VALUES ('Vasya');

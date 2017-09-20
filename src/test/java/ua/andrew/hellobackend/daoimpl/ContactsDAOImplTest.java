@@ -44,11 +44,11 @@ public class ContactsDAOImplTest {
         try (Connection c = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
              Statement s = c.createStatement()) {
 
-            s.execute("INSERT INTO contacts (id, name) VALUES (1, 'Andrew');\n" +
-                    "INSERT INTO contacts (id, name) VALUES (2, 'Vasya');\n" +
-                    "INSERT INTO contacts (id, name) VALUES (3, 'Mike');\n" +
-                    "INSERT INTO contacts (id, name) VALUES (4, 'Teresa');\n" +
-                    "INSERT INTO contacts (id, name) VALUES (5, 'Bob');");
+            s.execute("INSERT INTO contacts (name) VALUES ('Andrew');\n" +
+                    "INSERT INTO contacts (name) VALUES ('Vasya');\n" +
+                    "INSERT INTO contacts (name) VALUES ('Mike');\n" +
+                    "INSERT INTO contacts (name) VALUES ('Teresa');\n" +
+                    "INSERT INTO contacts (name) VALUES ('Bob');");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
